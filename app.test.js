@@ -1,4 +1,4 @@
-const { factorial } = require('./app');
+const { factorial, sum } = require('./app');
 // factorial of a number
 test('factorial of 1 is 1', () => {
   expect(factorial(1)).toBe(1);
@@ -16,4 +16,20 @@ test('factorial of 5 should be 120', () => {
 test('Array is contaning apple', () => {
   const fruits = ['apple', 'banana', 'apple', 'banana'];
   expect(new Set(fruits)).toContain('apple');
+  expect(fruits).toHaveLength(4);
+});
+
+test(' check instance', () => {
+  class A {}
+  let obj5 = new A();
+  function Name() {
+    this.name = 'santosh';
+  }
+  let obj6 = new Name();
+  expect(obj6).toBeInstanceOf(Name);
+});
+
+test('mock', () => {
+  const mockCallback = jest.fn((a, b) => a + b);
+  expect(sum(5, 10, mockCallback)).toBe(15);
 });

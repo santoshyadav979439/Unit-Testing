@@ -4,4 +4,10 @@ const factorial = (num) => {
     return num * factorial(num - 1);
   }
 };
-module.exports = { factorial };
+
+const sum = (a, b, callback) => {
+  return callback(a, b);
+};
+const fun1 = () => {};
+
+module.exports = { factorial, sum };
